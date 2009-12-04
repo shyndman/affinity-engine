@@ -1,10 +1,10 @@
 # Startup. Let's set up our paths.
-require 'logger'
 require 'singleton'
+require 'pathname'
 
 # XXX This is a bad test. Consider looking for some env flag.
 if Dir['.'].include? "pom.xml"
-  $:.concat ['src/main/resources/scripts']
+  Dir.chdir 'src/main/resources/scripts'  
   require 'java'
 end
 
@@ -23,7 +23,6 @@ class ScriptEngine
   # Holds configuration information
   #
   module Config
-    LOG_LEVEL = Logger::DEBUG
   end
   
   def initialize
@@ -34,24 +33,9 @@ class ScriptEngine
   # Starting up
   #
   def start
-    init_logging()
     load_libs()
     load_game()
     self
-  end
-
-  #
-  # Initializes the logging system
-  #
-  def init_logging
-    #
-    # Initialize the logging system
-    #
-    $logger = Logger.new(STDOUT)
-    $logger.level = Config::LOG_LEVEL
-    $logger.formatter = Proc.new do |severity, time, progname, msg|
-      "%-5s : %-4s : %s\n" % [severity, $$, msg]
-    end
   end
   
   #

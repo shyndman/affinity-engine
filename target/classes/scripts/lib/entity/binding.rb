@@ -1,8 +1,7 @@
 require '../const' if $0 == __FILE__ 
-require 'singleton'
 
 # Action bindings are a map of "game" actions to their associated input controls.
-module ActionBindings  
+class ActionBindings  
   attr_accessor :mouse_binding, :key_bindings
   
   def initialize(mouse_binding, key_bindings) 

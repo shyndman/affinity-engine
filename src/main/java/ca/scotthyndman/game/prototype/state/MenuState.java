@@ -18,8 +18,8 @@ import org.fenggui.layout.GridLayout;
 import org.fenggui.theme.ITheme;
 import org.fenggui.theme.XMLTheme;
 
-import ca.scotthyndman.game.prototype.GameMain;
-import ca.scotthyndman.game.prototype.input.menu.MenuInputHandler;
+import ca.scotthyndman.game.engine.Engine;
+import ca.scotthyndman.game.engine.input.menu.MenuInputHandler;
 
 import com.jme.image.Texture;
 import com.jme.input.MouseInput;
@@ -72,7 +72,7 @@ public class MenuState extends BasicGameState {
 					theme = new XMLTheme("themes/QtCurve.txt");
 				} catch (Exception e1) {
 					e1.printStackTrace();
-					GameMain.shutDown();
+					Engine.shutDown();
 				}
 				return null;
 			}
@@ -126,7 +126,7 @@ public class MenuState extends BasicGameState {
 		quit.addButtonPressedListener(new IButtonPressedListener() {
 			public void buttonPressed(final ButtonPressedEvent e) {
 				if (isActive()) {
-					GameMain.shutDown();
+					Engine.shutDown();
 				}
 			}
 		});
@@ -146,12 +146,10 @@ public class MenuState extends BasicGameState {
 	public final void setActive(final boolean active) {
 		super.setActive(active);
 		if (active == false) {
-			MouseInput.get().setCursorVisible(false);
 			input.setEnabled(false);
 			return;
 		}
 		input.setEnabled(true);
-		MouseInput.get().setCursorVisible(true);
 
 		// reset any texture transformations, FengGUI would inherit them
 		final TextureState defaultTextureState;

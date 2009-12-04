@@ -1,9 +1,10 @@
 # Startup. Let's set up our paths.
 require 'singleton'
+require 'pathname'
 
 # XXX This is a bad test. Consider looking for some env flag.
 if Dir['.'].include? "pom.xml"
-  $:.concat ['src/main/resources/scripts']
+  Dir.chdir 'src/main/resources/scripts'  
   require 'java'
 end
 

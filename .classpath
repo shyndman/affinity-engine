@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
-	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
-	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JVM 1.5"/>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/ruby"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/assembly"/>
+	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry kind="var" path="M2_REPO/net/sf/fenggui/0.9.2-SNAPSHOT/fenggui-0.9.2-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530.jar" sourcepath="M2_REPO/com/google/code/google-collections/google-collect/snapshot-20080530/google-collect-snapshot-20080530-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/java/jinput/2.0.1/jinput-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme/2.0-S1/jme-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-audio/2.0-S1/jme-audio-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-collada/2.0-S1/jme-collada-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-effects/2.0-S1/jme-effects-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-font/2.0-S1/jme-font-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-gamestates/2.0-S1/jme-gamestates-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-model/2.0-S1/jme-model-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-scene/2.0-S1/jme-scene-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-terrain/2.0-S1/jme-terrain-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/com/jmonkeyengine/jme-xml/2.0-S1/jme-xml-2.0-S1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/projectdarkstar/ext/jorbis/jorbis/0.0.17/jorbis-0.0.17.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jruby/jruby-complete/1.2.0/jruby-complete-1.2.0.jar" sourcepath="/JRUBY"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/4.5/junit-4.5.jar" sourcepath="M2_REPO/junit/junit/4.5/junit-4.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/lwjgl/lwjgl/2.0.1/lwjgl-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/lwjgl/lwjgl_util/2.0.1/lwjgl_util-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/miglayout/miglayout/3.7/miglayout-3.7.jar" sourcepath="M2_REPO/com/miglayout/miglayout/3.7/miglayout-3.7-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
