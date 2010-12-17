@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to (Property)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/animation/extensions.rb, line 44</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">tween_info</span>
+    <span class="ruby-comment cmt">#</span>
+    <span class="ruby-comment cmt"># ATTENTION!! animateTo isn't actually available on the property. we're making the assumption that it will be there.</span>
+    <span class="ruby-comment cmt">#</span>
+    <span class="ruby-identifier">animateTo</span>(<span class="ruby-identifier">tween_info</span>.<span class="ruby-identifier">to</span>, <span class="ruby-identifier">tween_info</span>.<span class="ruby-identifier">duration</span>, <span class="ruby-identifier">tween_info</span>.<span class="ruby-identifier">easing</span>, <span class="ruby-identifier">tween_info</span>.<span class="ruby-identifier">delay</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

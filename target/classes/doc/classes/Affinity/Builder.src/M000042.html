@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>polyline (Affinity::Builder)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/builder/shapes.rb, line 74</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">polyline</span> <span class="ruby-identifier">points</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+      
+      <span class="ruby-comment cmt"># build a line</span>
+      <span class="ruby-identifier">line</span> = <span class="ruby-constant">Line</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:name</span>]
+      
+      <span class="ruby-comment cmt"># build up a points float buffer</span>
+      <span class="ruby-identifier">pbuf</span> = <span class="ruby-constant">BufferUtils</span>.<span class="ruby-identifier">createVector3Buffer</span>(<span class="ruby-identifier">points</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>)
+      <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;arrived&quot;</span>
+      <span class="ruby-identifier">c</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">points</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">pbuf</span>.<span class="ruby-identifier">put</span> <span class="ruby-identifier">v</span>
+        <span class="ruby-identifier">c</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">pbuf</span>.<span class="ruby-identifier">put</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># set the width</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">:line_width</span>
+        <span class="ruby-identifier">line</span>.<span class="ruby-identifier">set_line_width</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:line_width</span>])
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># set up the colors</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">:colors</span>
+        <span class="ruby-identifier">line</span>.<span class="ruby-identifier">set_color_buffer</span>(<span class="ruby-constant">BufferUtils</span>.<span class="ruby-identifier">create_float_buffer</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:colors</span>].<span class="ruby-identifier">to_java</span> <span class="ruby-constant">ColorRGBA</span>))
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">:color</span>
+        <span class="ruby-identifier">line</span>.<span class="ruby-identifier">set_default_color</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:color</span>])
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt">#textures</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">:texture_points</span>
+          <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">BufferUtils</span>.<span class="ruby-identifier">createVector2Buffer</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:texture_points</span>].<span class="ruby-identifier">length</span>
+          <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">put</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:texture_points</span>]
+          <span class="ruby-identifier">line</span>.<span class="ruby-identifier">set_texture_coords</span>(<span class="ruby-constant">TexCoords</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">buffer</span>))
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># index buffer</span>
+      <span class="ruby-identifier">ibuf</span> = <span class="ruby-constant">BufferUtils</span>.<span class="ruby-identifier">createIntBuffer</span>((<span class="ruby-value">0</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">points</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>) <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">to_java</span> <span class="ruby-identifier">:int</span>)
+      
+      <span class="ruby-comment cmt"># finish building the quad</span>
+      <span class="ruby-identifier">line</span>.<span class="ruby-identifier">reconstruct</span>(<span class="ruby-identifier">pbuf</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">line</span>.<span class="ruby-identifier">get_color_buffer</span>, <span class="ruby-identifier">line</span>.<span class="ruby-identifier">get_texture_coords</span>[<span class="ruby-value">0</span>])
+      <span class="ruby-identifier">line</span>.<span class="ruby-identifier">set_index_buffer</span> <span class="ruby-identifier">ibuf</span>
+      
+      <span class="ruby-comment cmt"># block invoke</span>
+      <span class="ruby-identifier">line</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
+      
+      <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

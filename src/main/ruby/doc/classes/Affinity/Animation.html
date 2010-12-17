@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Affinity::Animation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Affinity::Animation</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/animation/core_rb.html">
+                lib/animation/core.rb
+                </a>
+        <br />
+                <a href="../../files/lib/animation/easing_rb.html">
+                lib/animation/easing.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Mixed into sprites to provide animation capabilities
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000048">add_sprite</a>&nbsp;&nbsp;
+      <a href="#M000044">animate</a>&nbsp;&nbsp;
+      <a href="#M000047">in</a>&nbsp;&nbsp;
+      <a href="#M000050">play_sound</a>&nbsp;&nbsp;
+      <a href="#M000049">remove_sprite</a>&nbsp;&nbsp;
+      <a href="#M000045">schedule</a>&nbsp;&nbsp;
+      <a href="#M000046">schedule_in</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Animation/Ease.html" class="link">Affinity::Animation::Ease</a><br />
+Class <a href="Animation/TweenInfo.html" class="link">Affinity::Animation::TweenInfo</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="Animation.src/M000048.html" target="Code" class="method-signature"
+            onclick="popupCode('Animation.src/M000048.html');return false;">
+          <span class="method-name">add_sprite</span><span class="method-args">(options, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="../A.html">A</a> timeline event that adds a sprite to a group
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="Animation.src/M000044.html" target="Code" class="method-signature"
+            onclick="popupCode('Animation.src/M000044.html');return false;">
+          <span class="method-name">animate</span><span class="method-args">(options, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Animates a sprite
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="Animation.src/M000047.html" target="Code" class="method-signature"
+            onclick="popupCode('Animation.src/M000047.html');return false;">
+          <span class="method-name">in</span><span class="method-args">(options, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Performs an action at a specific time.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="Animation.src/M000050.html" target="Code" class="method-signature"
+            onclick="popupCode('Animation.src/M000050.html');return false;">
+          <span class="method-name">play_sound</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="../A.html">A</a> timeline event that plays a sound
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="Animation.src/M000049.html" target="Code" class="method-signature"
+            onclick="popupCode('Animation.src/M000049.html');return false;">
+          <span class="method-name">remove_sprite</span><span class="method-args">(options, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="../A.html">A</a> timeline event that removes a sprite from a group
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="Animation.src/M000045.html" target="Code" class="method-signature"
+            onclick="popupCode('Animation.src/M000045.html');return false;">
+          <span class="method-name">schedule</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Builds a timeline animation.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="Animation.src/M000046.html" target="Code" class="method-signature"
+            onclick="popupCode('Animation.src/M000046.html');return false;">
+          <span class="method-name">schedule_in</span><span class="method-args">(delay, *args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Builds a timeline animation.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

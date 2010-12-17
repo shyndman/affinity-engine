@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Affinity::Input::Key</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Affinity::Input::Key</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/entity/events_rb.html">
+                lib/entity/events.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A key is a button on your keyboard.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000057">identifier_of</a>&nbsp;&nbsp;
+      <a href="#M000056">name_of</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VOID</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Void&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ESCAPE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Escape&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_1</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;1&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;2&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_3</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;3&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_4</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;4&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_5</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;5&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_6</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;6&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_7</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;7&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_8</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;8&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_9</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;9&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K_0</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;0&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MINUS</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;-&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">EQUALS</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;=&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BACK</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Back&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TAB</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Tab&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Q</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Q&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">W</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;W&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">E</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;E&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">R</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;R&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">T</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;T&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Y</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Y&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">U</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;U&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">I</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;I&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">O</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;O&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">P</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;P&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LBRACKET</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;[&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RBRACKET</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;]&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RETURN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Return&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LCONTROL</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left Control&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">A</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;A&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">S</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;S&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">D</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;D&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">G</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;G&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">H</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;H&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">J</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;J&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">K</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;K&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">L</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;L&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SEMICOLON</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;;&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">APOSTROPHE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;'&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GRAVE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;~&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LSHIFT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left Shift&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BACKSLASH</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;\\&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Z</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Z&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">X</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;X&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">C</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;C&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">V</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;V&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;B&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">N</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;N&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">M</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">COMMA</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;,&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PERIOD</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;.&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SLASH</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;/&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RSHIFT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right Shift&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MULTIPLY</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Multiply&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LALT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left Alt&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SPACE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot; &quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CAPITAL</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Caps Lock&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F1</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F1&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F2&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F3</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F3&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F4</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F4&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F5</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F5&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F6</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F6&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F7</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F7&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F8</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F8&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F9</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F9&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F10</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F10&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMLOCK</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num Lock&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SCROLL</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Scroll Lock&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD7</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 7&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD8</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 8&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD9</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 9&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SUBTRACT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num -&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD4</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 4&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD5</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 5&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD6</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 6&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ADD</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num +&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD1</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 1&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 2&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD3</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 3&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPAD0</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num 0&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DECIMAL</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num .&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F11</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F11&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F12</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F12&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F13</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F13&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F14</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F14&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">F15</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;F15&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">KANA</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Kana&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CONVERT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Convert&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NOCONVERT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Noconvert&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">YEN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Yen&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPADEQUAL</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num =&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CIRCUMFLEX</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Circumflex&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;At&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">COLON</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Colon&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UNDERLINE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Underline&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">KANJI</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Kanji&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">STOP</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Stop&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AX</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Ax&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UNLABELED</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Unlabeled&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPADENTER</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num Enter&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RCONTROL</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right Control&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMPADCOMMA</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num ,&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DIVIDE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Num /&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SYSRQ</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;SysRq&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RALT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right Alt&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PAUSE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Pause&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">HOME</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Home&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UP</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Up&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PAGEUP</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Pg Up&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LEFT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RIGHT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">KEND</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;End&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DOWN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Down&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PAGEDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Pg Down&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">INSERT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Insert&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DELETE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Delete&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LWIN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left Windows&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RWIN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right Windows&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">APPS</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Apps&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">POWER</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Power&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SLEEP</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Sleep&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UNKNOWN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Unknown&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">{}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+A hash storing all the key names
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">IDENTIFIERS</td>
+          <td>=</td>
+          <td class="context-item-value">{}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+A hash storing identifiers
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
+
+        <div class="method-heading">
+          <a href="Key.src/M000057.html" target="Code" class="method-signature"
+            onclick="popupCode('Key.src/M000057.html');return false;">
+          <span class="method-name">identifier_of</span><span class="method-args">(keycode)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
+
+        <div class="method-heading">
+          <a href="Key.src/M000056.html" target="Code" class="method-signature"
+            onclick="popupCode('Key.src/M000056.html');return false;">
+          <span class="method-name">name_of</span><span class="method-args">(keycode)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

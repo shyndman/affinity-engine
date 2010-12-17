@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>reload_scripts (Affinity::ScriptEngine)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/affinity.rb, line 182</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reload_scripts</span>
+      <span class="ruby-identifier">load</span> <span class="ruby-value str">'util/util.rb'</span>
+      <span class="ruby-constant">Util</span>.<span class="ruby-identifier">load_dir</span> <span class="ruby-value str">'animation'</span>, <span class="ruby-identifier">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Animation&quot;</span>, <span class="ruby-identifier">:first</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;easing.rb&quot;</span>, <span class="ruby-value str">&quot;core.rb&quot;</span>]
+      <span class="ruby-constant">Util</span>.<span class="ruby-identifier">load_dir</span> <span class="ruby-value str">'scene'</span>, <span class="ruby-identifier">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Scene&quot;</span>
+      <span class="ruby-constant">Affinity</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span>.<span class="ruby-identifier">load_includes</span>
+      <span class="ruby-constant">Affinity</span><span class="ruby-operator">::</span><span class="ruby-constant">Entity</span>.<span class="ruby-identifier">load_includes</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

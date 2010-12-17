@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Affinity::Input::Button</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Affinity::Input::Button</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/entity/events_rb.html">
+                lib/entity/events.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A button is a button on a mouse, a joystick, or some other input device.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000055">identifier_of</a>&nbsp;&nbsp;
+      <a href="#M000054">name_of</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_0</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;0&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_1</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;1&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;2&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_3</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;3&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_4</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;4&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_5</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;5&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_6</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;6&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_7</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;7&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_8</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;8&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_9</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;9&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_10</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;10&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_11</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;11&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_12</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;12&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_13</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;13&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_14</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;14&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_15</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;15&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_16</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;16&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_17</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;17&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_18</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;18&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_19</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;19&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_20</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;20&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_21</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;21&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_22</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;22&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_23</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;23&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_24</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;24&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_25</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;25&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_26</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;26&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_27</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;27&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_28</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;28&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_29</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;29&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_30</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;30&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B_31</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;31&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TRIGGER</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Trigger&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Joystick trigger button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">THUMB</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Thumb&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Joystick thumb button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">THUMB2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Thumb 2&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Second joystick thumb button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOP</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Top&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Joystick top button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOP2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Top 2&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Second joystick top button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PINKIE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Pinkie&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+The joystick button you play with with you little finger (Pinkie on#that*
+side of the pond :P)
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BASE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Base&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Joystick button on the base of the device
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BASE2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Base 2&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Second joystick button on the base of the device
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BASE3</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Base 3&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Third joystick button on the base of the device
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BASE4</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Base 4&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Fourth joystick button on the base of the device
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BASE5</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Base 5&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Fifth joystick button on the base of the device
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BASE6</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Base 6&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Sixth joystick button on the base of the device
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEAD</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Dead&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+erm, dunno, but it&#8216;s in the defines so it might exist.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">A</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;A&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;A&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">B</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;B&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;B&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">C</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;C&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;C&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">X</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;X&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;X&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Y</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;Y&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Z</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Z&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;Z&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LEFT_THUMB</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left Thumb&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Left thumb button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RIGHT_THUMB</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right Thumb&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Right thumb button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LEFT_THUMB2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left Thumb 2&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Second left thumb button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RIGHT_THUMB2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right Thumb 2&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Second right thumb button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SELECT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Select&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;Select&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MODE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Mode&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+&#8216;Mode&#8217; button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LEFT_THUMB3</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left Thumb 3&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Another left thumb button on a gamepad (how many thumbs do you have??)
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RIGHT_THUMB3</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right Thumb 3&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Another right thumb button on a gamepad
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_PEN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Pen&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser pen tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_RUBBER</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Rubber&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser rubber (eraser) tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_BRUSH</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Brush&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser brush tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_PENCIL</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Pencil&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser pencil tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_AIRBRUSH</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Airbrush&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser airbrush tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_FINGER</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Finger&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser finger tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_MOUSE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Mouse&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser mouse tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOOL_LENS</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Lens&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser lens tool button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TOUCH</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Touch&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser touch button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">STYLUS</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Stylus&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Digitiser stylus button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">STYLUS2</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Stylus 2&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Second digitiser stylus button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UNKNOWN</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Unknown&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+An unknown button
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BACK</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Back&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Returns the back mouse button.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">EXTRA</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Extra&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Returns the extra mouse button.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FORWARD</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Forward&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Returns the forward mouse button.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LEFT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Left&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+The primary or leftmost mouse button.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MIDDLE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Middle&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Returns the middle mouse button, not present if the mouse has fewer than
+three buttons.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RIGHT</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Right&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+The secondary or rightmost mouse button, not present if the mouse is a
+single-button mouse.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SIDE</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;Side&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Returns the side mouse button.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">{}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+A hash storing all the button names
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">IDENTIFIERS</td>
+          <td>=</td>
+          <td class="context-item-value">{}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+A hash storing all the identifiers
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000055" class="method-detail">
+        <a name="M000055"></a>
+
+        <div class="method-heading">
+          <a href="Button.src/M000055.html" target="Code" class="method-signature"
+            onclick="popupCode('Button.src/M000055.html');return false;">
+          <span class="method-name">identifier_of</span><span class="method-args">(buttoncode)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
+
+        <div class="method-heading">
+          <a href="Button.src/M000054.html" target="Code" class="method-signature"
+            onclick="popupCode('Button.src/M000054.html');return false;">
+          <span class="method-name">name_of</span><span class="method-args">(buttoncode)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Reverse lookup on the button (buttoncode to name)
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
