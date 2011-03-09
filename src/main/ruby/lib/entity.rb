@@ -17,7 +17,7 @@ class Entity
   
   #
   # The entity's current state. Each entity in the game world is only ever in one state. Its state reflects
-  # the action it wants to perform.
+  # the one or more possible next actions it wants to perform.
   #
   attr_reader :current_state
   
