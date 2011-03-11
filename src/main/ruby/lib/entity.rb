@@ -381,7 +381,7 @@ class Entity
   protected
   
   #
-  # 
+  # Errr...can't remember why this does what it does how it does it.
   #
   def sleep duration_in_seconds
     sleep_fiber = Fiber.new do
