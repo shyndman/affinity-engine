@@ -10,6 +10,9 @@ module LotsGoingOn
     end
   end
   
+  #
+  # The spinning hamster class
+  #
   class Hamster < Affinity::Entity
     on_event :tick do |info|
       ease = :regular_in_out
@@ -18,11 +21,18 @@ module LotsGoingOn
       sprite.x.to rand(800).over time.seconds, :with_ease => ease, :delay_by => delay
       sprite.y.to rand(600).over time.seconds, :with_ease => ease, :delay_by => delay
       sprite.angle.to rand(720).over time.seconds, :with_ease => ease, :delay_by => delay
+      
+      #
+      # Don't call tick again until we're done tweening
+      #
       event_wait_for sprite.x.behavior
     end
   end
   
-  (0..500).each do |i|
+  #
+  # Create 500 beasts! (attached at scene graph root)
+  #
+  (0...500).each do |i|
     h = Hamster.new :name => "ham#{i}" do
       t = tex "hamster.png", :classpath => true
       g = graphic(t, :x => rand(800), :y => rand(300))

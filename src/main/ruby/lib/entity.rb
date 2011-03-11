@@ -432,7 +432,5 @@ if __FILE__ == $0
     end
   end
   
-  b = B.new
-  
-  b.__aff_method_state_begin
+  b = B.new.__aff_method_state_begin
 end
