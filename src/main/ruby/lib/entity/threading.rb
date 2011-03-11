@@ -157,13 +157,9 @@ class FiberWorker
   #
   # Returns the worker's pool
   #
-  def pool 
-    @pool
-  end
+  def pool; @pool; end
   
-  def event
-    @event
-  end
+  def event; @event; end
   
   #
   # Sets the finishable that is blocking this worker from completing its task.
@@ -176,16 +172,12 @@ class FiberWorker
   #
   # Returns true if the worker is currently blocked
   #
-  def blocked?
-    @blocked
-  end
+  def blocked?; @blocked; end
   
   #
   # Returns true if the worker is currently running
   #
-  def running?
-    @is_running
-  end
+  def running?; @is_running; end
   
   #
   # Calculates whether the block is still in place

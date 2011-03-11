@@ -5,6 +5,7 @@
 class State
   attr_reader :symbol, :entity_class, :options
   attr_accessor :method
+  
   #
   # Initializes the state with all necessary information
   #
