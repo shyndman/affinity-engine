@@ -5,8 +5,8 @@ module LotsGoingOn
   #
   class Cursor < Affinity::Entity
     on_event :tick do |info|
-      @sprite.x.set(env.input_state.mouse_x)
-      @sprite.y.set(env.input_state.mouse_y)      
+      @sprite.x.set env.input_state.mouse_x
+      @sprite.y.set env.input_state.mouse_y
     end
   end
   
@@ -47,13 +47,13 @@ module LotsGoingOn
   $cursor = Cursor.new :name => "cursor" do
     
     # build a node
-    n = node("cursor", :x => env.input_state.mouse_x, :y => env.input_state.mouse_y)
+    n = node "cursor", :x => env.input_state.mouse_x, :y => env.input_state.mouse_y
     
     # load a texture
     t = tex "flower_pointer.png", :classpath => true
     
     # create a graphic
-    g = graphic(t, :x => 0, :y => 0)
+    g = graphic t, :x => 0, :y => 0
   end
   
   #
