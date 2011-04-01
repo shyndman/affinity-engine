@@ -30,7 +30,7 @@ module LotsGoingOn
   end
   
   #
-  # Create 500 beasts! (attached at scene graph root)
+  # Create 501 beasts! (attached at scene graph root)
   #
   (0...500).each do |i|
     h = Hamster.new :name => "ham#{i}" do
