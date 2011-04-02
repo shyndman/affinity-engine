@@ -32,7 +32,7 @@ module LotsGoingOn
   #
   # Create 501 beasts! (attached at scene graph root)
   #
-  (0...500).each do |i|
+  (0..500).each do |i|
     h = Hamster.new :name => "ham#{i}" do
       t = tex "hamster.png", :classpath => true
       g = graphic(t, :x => rand(800), :y => rand(300))
